@@ -6,10 +6,10 @@ import Pizza from "./Components/Pizza.jsx";
 import Ingredients from "./Components/Ingredients.jsx";
 import Calzone from "./Components/Calzone.jsx";
 import Title from "./Components/Title.jsx";
-import NotFound from './Components/NotFound';
-import Order from './Components/Order';
-import Navbar from './Components/Navbar';
-import {DataContext} from './Providers/DataProvider';
+import NotFound from './Components/NotFound.jsx';
+import Order from './Components/Order.jsx';
+import Navbar from './Components/Navbar.jsx';
+import {DataContext} from './Providers/DataProvider.jsx';
 import { Card, Container } from 'reactstrap';
 
 const history = createBrowserHistory();
@@ -18,12 +18,13 @@ function App() {
   return (
     <div className="App">
       <DataContext.Provider>
+        
         <Container>
           <Card><Navbar/></Card>
           <Router history={history}>
             <Switch>
               <Route exact path="/" component={Title}></Route>
-              <Route path="/order" component={Order}></Route>
+              <Route exact path="/order" component={Order}></Route>
               <Route path="/order/pizza" component={Pizza}></Route>
               <Route path="/order/calzone" component={Calzone}></Route>
               <Route path="/ingredients" component={Ingredients}></Route>
